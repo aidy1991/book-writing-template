@@ -9,6 +9,8 @@
     "review": "yarn review-docker review",
     "pdf": "yarn review-docker review-pdfmaker config.yml && open ./articles/book.pdf",
     "prh": "docker run --rm -v $PWD:/work tmknom/prh",
-    "check-prh": "yarn prh --rules prh.yml --diff --verify articles/*.re"
+    "check-prh": "yarn prh --rules prh.yml --diff --verify **/*.re",
+    "redpen": "docker run --rm -v $PWD:/work tmknom/redpen",
+    "check-redpen": "yarn redpen --format review --limit 0 --lang ja --conf redpen-conf.xml **/*.re"
   }
 }
