@@ -1,0 +1,13 @@
+{
+  "name": "book-writing-template",
+  "version": "1.0.0",
+  "description": "Template for book writing using Re:VIEW",
+  "repository": "git@github.com:aidy1991/book-writing-template.git",
+  "author": "Daichi Imamori <aidy.91614@gmail.com>",
+  "scripts": {
+    "pull-review": "docker pull vvakame/review:3.2",
+    "review-docker": "docker run -t --rm -v $PWD:/work -w /work/articles vvakame/review:3.2",
+    "review": "yarn review-docker review",
+    "pdf": "yarn review-docker review-pdfmaker config.yml && open ./articles/book.pdf"
+  }
+}
