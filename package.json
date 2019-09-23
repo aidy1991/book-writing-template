@@ -5,9 +5,10 @@
   "repository": "git@github.com:aidy1991/book-writing-template.git",
   "author": "Daichi Imamori <aidy.91614@gmail.com>",
   "scripts": {
-    "pull-review": "docker pull vvakame/review:3.2",
     "review-docker": "docker run -t --rm -v $PWD:/work -w /work/articles vvakame/review:3.2",
     "review": "yarn review-docker review",
-    "pdf": "yarn review-docker review-pdfmaker config.yml && open ./articles/book.pdf"
+    "pdf": "yarn review-docker review-pdfmaker config.yml && open ./articles/book.pdf",
+    "prh": "docker run --rm -v $PWD:/work tmknom/prh",
+    "check-prh": "yarn prh --rules prh.yml --diff --verify articles/*.re"
   }
 }
