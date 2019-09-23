@@ -13,7 +13,8 @@
     "redpen": "docker run --rm -v $PWD:/work tmknom/redpen",
     "check-redpen": "yarn redpen --format review --limit 0 --lang ja --conf redpen-conf.xml **/*.re",
     "textlint": "docker run --rm -v $PWD:/work tmknom/textlint-for-tech",
-    "check-textlint": "yarn textlint --config .textlintrc **/*.re"
+    "check-textlint": "yarn textlint --config .textlintrc **/*.re",
+    "checks": "yarn check-prh && yarn check-redpen && yarn check-textlint"
   },
   "dependencies": {}
 }

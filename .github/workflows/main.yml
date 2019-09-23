@@ -6,9 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    steps:
-    - uses: uses: docker://tmknom/prh:latest
-    - name: Check by prh
-      run: prh --rules prh.yml --diff --verify **/*.re
 
+    steps:
+    - name: Check by prh
+      uses: docker://tmknom/prh:latest
+      with:
+        args: --rules prh.yml --diff --verify **/*.re
